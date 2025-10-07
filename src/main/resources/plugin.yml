@@ -1,0 +1,6 @@
+name: JCore
+version: '0.1.0'
+main: com.jerae.jcore.main
+api-version: '1.21'
+authors: [ Jerae ]
+description: A plugin made for SMP Awakening
