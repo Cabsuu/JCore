@@ -13,11 +13,9 @@ commands:
     description: Change your nickname.
     usage: /nick <nickname>
     aliases: [nickname]
-    permission: jcore.nick
   rename:
     description: Rename the item in your hand.
     usage: /rename <name>
-    permission: jcore.rename
 permissions:
   jcore.rename:
     description: Allows using the /rename command.
