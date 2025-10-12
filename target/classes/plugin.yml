@@ -21,7 +21,7 @@ commands:
 permissions:
   jcore.rename:
     description: Allows using the /rename command.
-    default: true
+    default: op
   jcore.rename.color:
     description: Allows using color codes in item names.
     default: op
@@ -36,7 +36,7 @@ permissions:
     default: op
   jcore.nick:
     description: Allows using the /nick command.
-    default: true
+    default: op
   jcore.nick.color:
     description: Allows using color codes in nicknames.
     default: op

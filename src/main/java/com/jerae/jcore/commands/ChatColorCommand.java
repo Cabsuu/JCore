@@ -27,7 +27,7 @@ public class ChatColorCommand implements CommandExecutor {
 
         Player player = (Player) sender;
 
-        if (PermissionUtils.hasPermission(player, "chatcolor.gui")) {
+        if (PermissionUtils.hasPermission(player, "chatcolor.gui", "&cYou do not have permission to use this command.")) {
             ChatColorGUI.open(player, plugin);
         }
 

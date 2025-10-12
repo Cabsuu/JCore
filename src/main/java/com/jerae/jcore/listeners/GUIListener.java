@@ -41,13 +41,13 @@ public class GUIListener implements Listener {
 
             String colorName = color.name().toLowerCase().replace("_", "");
 
-            if (PermissionUtils.hasPermission(player, "chatcolor.color." + colorName)) {
+            if (PermissionUtils.hasPermission(player, "chatcolor.color." + colorName, "&cYou do not have permission to use this color.")) {
                 plugin.getPlayerColorManager().setPlayerColor(player, color.toString());
                 player.sendMessage(ChatColorUtils.translate("&aYour chat color has been set to " + color + color.name()));
                 player.closeInventory();
             }
         } else if (clickedItem.getType() == Material.ANVIL) {
-            if (PermissionUtils.hasPermission(player, "chatcolor.hex")) {
+            if (PermissionUtils.hasPermission(player, "chatcolor.hex", "&cYou do not have permission to use this feature.")) {
                 player.closeInventory();
                 player.sendMessage(ChatColor.YELLOW + "Please enter a hex color code in chat (e.g., #FF5733).");
                 plugin.getConversationManager().startConversation(player, (response) -> {
@@ -62,7 +62,7 @@ public class GUIListener implements Listener {
                 });
             }
         } else if (clickedItem.getType() == Material.BUCKET) {
-            if (PermissionUtils.hasPermission(player, "chatcolor.gradient")) {
+            if (PermissionUtils.hasPermission(player, "chatcolor.gradient", "&cYou do not have permission to use this feature.")) {
                 player.closeInventory();
                 player.sendMessage(ChatColor.YELLOW + "Enter the first hex color for the gradient.");
                 plugin.getConversationManager().startConversation(player, (startColor) -> {

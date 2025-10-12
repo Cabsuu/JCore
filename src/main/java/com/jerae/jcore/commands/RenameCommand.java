@@ -22,7 +22,7 @@ public class RenameCommand implements CommandExecutor {
 
         Player player = (Player) sender;
 
-        if (!PermissionUtils.hasPermission(player, "rename")) {
+        if (!PermissionUtils.hasPermission(player, "rename", "&cYou do not have permission to use this command.")) {
             return true;
         }
 
@@ -40,19 +40,19 @@ public class RenameCommand implements CommandExecutor {
 
         String name = String.join(" ", args);
 
-        if (name.matches(".*&[a-f0-9].*") && !PermissionUtils.hasPermission(player, "rename.color")) {
+        if (name.matches(".*&[a-f0-9].*") && !PermissionUtils.hasPermission(player, "rename.color", "&cYou do not have permission to use this color.")) {
             return true;
         }
 
-        if (name.matches(".*&[k-o].*") && !PermissionUtils.hasPermission(player, "rename.format")) {
+        if (name.matches(".*&[k-o].*") && !PermissionUtils.hasPermission(player, "rename.format", "&cYou do not have permission to use this text style.")) {
             return true;
         }
 
-        if (name.contains("<gradient:") && !PermissionUtils.hasPermission(player, "rename.gradient")) {
+        if (name.contains("<gradient:") && !PermissionUtils.hasPermission(player, "rename.gradient", "&cYou do not have permission to use this feature.")) {
             return true;
         }
 
-        if (name.contains("#") && !PermissionUtils.hasPermission(player, "rename.hex")) {
+        if (name.contains("#") && !PermissionUtils.hasPermission(player, "rename.hex", "&cYou do not have permission to use this feature.")) {
             return true;
         }
 

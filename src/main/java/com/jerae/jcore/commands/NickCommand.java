@@ -19,7 +19,7 @@ public class NickCommand implements CommandExecutor {
 
         Player player = (Player) sender;
 
-        if (!PermissionUtils.hasPermission(player, "nick")) {
+        if (!PermissionUtils.hasPermission(player, "nick", "&cYou do not have permission to use this command.")) {
             return true;
         }
 
@@ -30,19 +30,19 @@ public class NickCommand implements CommandExecutor {
 
         String nick = String.join(" ", args);
 
-        if (nick.matches(".*&[a-f0-9].*") && !PermissionUtils.hasPermission(player, "nick.color")) {
+        if (nick.matches(".*&[a-f0-9].*") && !PermissionUtils.hasPermission(player, "nick.color", "&cYou do not have permission to use this color.")) {
             return true;
         }
 
-        if (nick.matches(".*&[k-o].*") && !PermissionUtils.hasPermission(player, "nick.format")) {
+        if (nick.matches(".*&[k-o].*") && !PermissionUtils.hasPermission(player, "nick.format", "&cYou do not have permission to use this text style.")) {
             return true;
         }
 
-        if (nick.contains("<gradient:") && !PermissionUtils.hasPermission(player, "nick.gradient")) {
+        if (nick.contains("<gradient:") && !PermissionUtils.hasPermission(player, "nick.gradient", "&cYou do not have permission to use this feature.")) {
             return true;
         }
 
-        if (nick.contains("#") && !PermissionUtils.hasPermission(player, "nick.hex")) {
+        if (nick.contains("#") && !PermissionUtils.hasPermission(player, "nick.hex", "&cYou do not have permission to use this feature.")) {
             return true;
         }
 
