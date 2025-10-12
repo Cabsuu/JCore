@@ -56,7 +56,7 @@ public class RenameCommand implements CommandExecutor {
             return true;
         }
 
-        if (name.contains("<gradient:") && !PermissionUtils.hasPermission(player, "rename.gradient", "&cYou do not have permission to use this feature.")) {
+        if (name.matches("<#([A-Fa-f0-9]{6}):#([A-Fa-f0-9]{6})>.*") && !PermissionUtils.hasPermission(player, "rename.gradient", "&cYou do not have permission to use this feature.")) {
             return true;
         }
 

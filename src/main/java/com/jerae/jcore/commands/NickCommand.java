@@ -44,7 +44,7 @@ public class NickCommand implements CommandExecutor {
             return true;
         }
 
-        if (nick.contains("<gradient:") && !PermissionUtils.hasPermission(player, "nick.gradient", "&cYou do not have permission to use this feature.")) {
+        if (nick.matches("<#([A-Fa-f0-9]{6}):#([A-Fa-f0-9]{6})>.*") && !PermissionUtils.hasPermission(player, "nick.gradient", "&cYou do not have permission to use this feature.")) {
             return true;
         }
 
