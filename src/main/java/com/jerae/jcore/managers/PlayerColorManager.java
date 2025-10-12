@@ -18,7 +18,7 @@ public class PlayerColorManager {
     }
 
     public String getPlayerColor(Player player) {
-        return config.getString("players." + player.getUniqueId() + ".color");
+        return config.getString("players." + player.getUniqueId() + ".color", "§f");
     }
 
     public void setPlayerColor(Player player, String color) {

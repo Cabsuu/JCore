@@ -31,7 +31,7 @@ public class ChatColorCommand implements CommandExecutor {
             return true;
         }
 
-        ChatColorGUI.open(player);
+        ChatColorGUI.open(player, plugin);
 
         return true;
     }

@@ -38,7 +38,7 @@ public class GUIListener implements Listener {
             ChatColor color = ChatColorGUI.getColor(event.getSlot());
             if (color == null) return;
 
-            String colorName = color.name().toLowerCase();
+            String colorName = color.name().toLowerCase().replace("_", "");
             String permission = "jcore.chatcolor.vanilla." + colorName;
 
             if (!player.hasPermission(permission)) {
@@ -59,10 +59,12 @@ public class GUIListener implements Listener {
             plugin.getConversationManager().startConversation(player, (response) -> {
                 if (!response.matches("^#([a-fA-F0-9]{6})$")) {
                     player.sendMessage(ChatColor.RED + "Invalid hex code format.");
+                    plugin.getConversationManager().endConversation(player);
                     return;
                 }
                 plugin.getPlayerColorManager().setPlayerColor(player, response);
                 player.sendMessage(ChatColor.GREEN + "Your chat color has been set to " + response);
+                plugin.getConversationManager().endConversation(player);
             });
         } else if (clickedItem.getType() == Material.BUCKET) {
             if (!player.hasPermission("jcore.chatcolor.gradient")) {
@@ -74,18 +76,23 @@ public class GUIListener implements Listener {
             plugin.getConversationManager().startConversation(player, (startColor) -> {
                 if (!startColor.matches("^#([a-fA-F0-9]{6})$")) {
                     player.sendMessage(ChatColor.RED + "Invalid hex code format for start color.");
+                    plugin.getConversationManager().endConversation(player);
                     return;
                 }
                 player.sendMessage(ChatColor.YELLOW + "Enter the second hex color for the gradient.");
                 plugin.getConversationManager().startConversation(player, (endColor) -> {
                     if (!endColor.matches("^#([a-fA-F0-9]{6})$")) {
                         player.sendMessage(ChatColor.RED + "Invalid hex code format for end color.");
+                        plugin.getConversationManager().endConversation(player);
                         return;
                     }
                     plugin.getPlayerColorManager().setPlayerGradient(player, startColor, endColor);
                     player.sendMessage(ChatColor.GREEN + "Your chat color has been set to a gradient from " + startColor + " to " + endColor);
+                    plugin.getConversationManager().endConversation(player);
                 });
             });
+        } else if (clickedItem.getType() == Material.OAK_DOOR) {
+            player.closeInventory();
         }
     }
 }

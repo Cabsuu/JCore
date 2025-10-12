@@ -15,6 +15,10 @@ public class ConversationManager {
         conversations.put(player.getUniqueId(), handler);
     }
 
+    public void endConversation(Player player) {
+        conversations.remove(player.getUniqueId());
+    }
+
     public boolean isinConversation(Player player) {
         return conversations.containsKey(player.getUniqueId());
     }
@@ -22,7 +26,6 @@ public class ConversationManager {
     public void handleResponse(Player player, String message) {
         if (conversations.containsKey(player.getUniqueId())) {
             conversations.get(player.getUniqueId()).accept(message);
-            conversations.remove(player.getUniqueId());
         }
     }
 }
