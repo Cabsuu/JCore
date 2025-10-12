@@ -1,10 +1,12 @@
-H:\Documents\Server Management\Self-Plugins\JCore\src\main\java\com\jerae\jcore\commands\ChatColorCommand.java
-H:\Documents\Server Management\Self-Plugins\JCore\src\main\java\com\jerae\jcore\guis\ChatColorGUI.java
-H:\Documents\Server Management\Self-Plugins\JCore\src\main\java\com\jerae\jcore\JCore.java
-H:\Documents\Server Management\Self-Plugins\JCore\src\main\java\com\jerae\jcore\listeners\ChatListener.java
-H:\Documents\Server Management\Self-Plugins\JCore\src\main\java\com\jerae\jcore\listeners\GUIListener.java
-H:\Documents\Server Management\Self-Plugins\JCore\src\main\java\com\jerae\jcore\main.java
-H:\Documents\Server Management\Self-Plugins\JCore\src\main\java\com\jerae\jcore\managers\ConversationManager.java
-H:\Documents\Server Management\Self-Plugins\JCore\src\main\java\com\jerae\jcore\managers\PlayerColorManager.java
-H:\Documents\Server Management\Self-Plugins\JCore\src\main\java\com\jerae\jcore\utils\ChatColorUtils.java
-H:\Documents\Server Management\Self-Plugins\JCore\src\main\java\com\jerae\jcore\utils\GradientUtils.java
+/app/src/main/java/com/jerae/jcore/JCore.java
+/app/src/main/java/com/jerae/jcore/commands/ChatColorCommand.java
+/app/src/main/java/com/jerae/jcore/commands/NickCommand.java
+/app/src/main/java/com/jerae/jcore/commands/RenameCommand.java
+/app/src/main/java/com/jerae/jcore/guis/ChatColorGUI.java
+/app/src/main/java/com/jerae/jcore/listeners/ChatListener.java
+/app/src/main/java/com/jerae/jcore/listeners/GUIListener.java
+/app/src/main/java/com/jerae/jcore/managers/ConversationManager.java
+/app/src/main/java/com/jerae/jcore/managers/PlayerColorManager.java
+/app/src/main/java/com/jerae/jcore/utils/ChatColorUtils.java
+/app/src/main/java/com/jerae/jcore/utils/GradientUtils.java
+/app/src/main/java/com/jerae/jcore/utils/PermissionUtils.java

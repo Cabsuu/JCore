@@ -1,0 +1,54 @@
+package com.jerae.jcore.commands;
+
+import com.jerae.jcore.utils.ChatColorUtils;
+import com.jerae.jcore.utils.PermissionUtils;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
+
+public class NickCommand implements CommandExecutor {
+
+    @Override
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
+        if (!(sender instanceof Player)) {
+            sender.sendMessage("This command can only be used by players.");
+            return true;
+        }
+
+        Player player = (Player) sender;
+
+        if (!PermissionUtils.hasPermission(player, "nick")) {
+            return true;
+        }
+
+        if (args.length == 0) {
+            sender.sendMessage(ChatColorUtils.translate("&cUsage: /nick <nickname>"));
+            return true;
+        }
+
+        String nick = String.join(" ", args);
+
+        if (nick.matches(".*&[a-f0-9].*") && !PermissionUtils.hasPermission(player, "nick.color")) {
+            return true;
+        }
+
+        if (nick.matches(".*&[k-o].*") && !PermissionUtils.hasPermission(player, "nick.format")) {
+            return true;
+        }
+
+        if (nick.contains("<gradient:") && !PermissionUtils.hasPermission(player, "nick.gradient")) {
+            return true;
+        }
+
+        if (nick.contains("#") && !PermissionUtils.hasPermission(player, "nick.hex")) {
+            return true;
+        }
+
+        player.setDisplayName(ChatColorUtils.translate(nick));
+        player.sendMessage(ChatColorUtils.translate("&aYour nickname has been set to: " + nick));
+
+        return true;
+    }
+}

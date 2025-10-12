@@ -19,6 +19,8 @@ public class JCore extends JavaPlugin {
 
         getLogger().info("JCore has been enabled!");
         this.getCommand("chatcolor").setExecutor(new ChatColorCommand(this));
+        this.getCommand("nick").setExecutor(new com.jerae.jcore.commands.NickCommand());
+        this.getCommand("rename").setExecutor(new com.jerae.jcore.commands.RenameCommand());
         getServer().getPluginManager().registerEvents(new ChatListener(this), this);
         getServer().getPluginManager().registerEvents(new GUIListener(this), this);
     }
