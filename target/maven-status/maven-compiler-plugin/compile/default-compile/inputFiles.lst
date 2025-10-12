@@ -1,0 +1,10 @@
+/app/src/main/java/com/jerae/jcore/JCore.java
+/app/src/main/java/com/jerae/jcore/commands/ChatColorCommand.java
+/app/src/main/java/com/jerae/jcore/guis/ChatColorGUI.java
+/app/src/main/java/com/jerae/jcore/listeners/ChatListener.java
+/app/src/main/java/com/jerae/jcore/listeners/GUIListener.java
+/app/src/main/java/com/jerae/jcore/main.java
+/app/src/main/java/com/jerae/jcore/managers/ConversationManager.java
+/app/src/main/java/com/jerae/jcore/managers/PlayerColorManager.java
+/app/src/main/java/com/jerae/jcore/utils/ChatColorUtils.java
+/app/src/main/java/com/jerae/jcore/utils/GradientUtils.java
