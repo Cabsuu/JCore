@@ -24,7 +24,13 @@ public class NickCommand implements CommandExecutor {
         }
 
         if (args.length == 0) {
-            sender.sendMessage(ChatColorUtils.translate("&cUsage: /nick <nickname>"));
+            sender.sendMessage(ChatColorUtils.translate("&cUsage: /nick <nickname|_reset>"));
+            return true;
+        }
+
+        if (args.length == 1 && args[0].equalsIgnoreCase("-reset")) {
+            player.setDisplayName(player.getName());
+            player.sendMessage(ChatColorUtils.translate("&aYour nickname has been reset."));
             return true;
         }
 

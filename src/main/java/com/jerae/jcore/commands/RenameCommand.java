@@ -27,11 +27,19 @@ public class RenameCommand implements CommandExecutor {
         }
 
         if (args.length == 0) {
-            sender.sendMessage(ChatColorUtils.translate("&cUsage: /rename <name>"));
+            sender.sendMessage(ChatColorUtils.translate("&cUsage: /rename <name|-reset>"));
             return true;
         }
 
         ItemStack item = player.getInventory().getItemInMainHand();
+
+        if (args.length == 1 && args[0].equalsIgnoreCase("-reset")) {
+            ItemMeta meta = item.getItemMeta();
+            meta.setDisplayName(null);
+            item.setItemMeta(meta);
+            player.sendMessage(ChatColorUtils.translate("&aItem name has been reset."));
+            return true;
+        }
 
         if (item.getType() == Material.AIR) {
             sender.sendMessage(ChatColorUtils.translate("&cYou must be holding an item to rename it."));
