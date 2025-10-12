@@ -9,7 +9,44 @@ commands:
     description: Change your chat color.
     usage: /chatcolor
     aliases: [cc, color]
+  nick:
+    description: Change your nickname.
+    usage: /nick <nickname>
+    aliases: [nickname]
+  rename:
+    description: Rename the item in your hand.
+    usage: /rename <name>
 permissions:
+  jcore.rename:
+    description: Allows using the /rename command.
+    default: op
+  jcore.rename.color:
+    description: Allows using color codes in item names.
+    default: op
+  jcore.rename.hex:
+    description: Allows using hex colors in item names.
+    default: op
+  jcore.rename.gradient:
+    description: Allows using gradient colors in item names.
+    default: op
+  jcore.rename.format:
+    description: Allows using formatting codes in item names.
+    default: op
+  jcore.nick:
+    description: Allows using the /nick command.
+    default: op
+  jcore.nick.color:
+    description: Allows using color codes in nicknames.
+    default: op
+  jcore.nick.hex:
+    description: Allows using hex colors in nicknames.
+    default: op
+  jcore.nick.gradient:
+    description: Allows using gradient colors in nicknames.
+    default: op
+  jcore.nick.format:
+    description: Allows using formatting codes in nicknames.
+    default: op
   jcore.chatcolor.gui:
     description: Allows opening the chatcolor GUI.
     default: true
@@ -19,71 +56,74 @@ permissions:
   jcore.chatcolor.gradient:
     description: Allows using gradient colors.
     default: op
-  jcore.chatcolor.vanilla.*:
+  jcore.chatcolor.format:
+    description: Allows using formatting codes in chat.
+    default: op
+  jcore.chatcolor.color.*:
     description: Allows using all vanilla colors.
     default: op
     children:
-      jcore.chatcolor.vanilla.black: true
-      jcore.chatcolor.vanilla.dark_blue: true
-      jcore.chatcolor.vanilla.dark_green: true
-      jcore.chatcolor.vanilla.dark_aqua: true
-      jcore.chatcolor.vanilla.dark_red: true
-      jcore.chatcolor.vanilla.dark_purple: true
-      jcore.chatcolor.vanilla.gold: true
-      jcore.chatcolor.vanilla.gray: true
-      jcore.chatcolor.vanilla.dark_gray: true
-      jcore.chatcolor.vanilla.blue: true
-      jcore.chatcolor.vanilla.green: true
-      jcore.chatcolor.vanilla.aqua: true
-      jcore.chatcolor.vanilla.red: true
-      jcore.chatcolor.vanilla.light_purple: true
-      jcore.chatcolor.vanilla.yellow: true
-      jcore.chatcolor.vanilla.white: true
-  jcore.chatcolor.vanilla.black:
+      jcore.chatcolor.color.black: true
+      jcore.chatcolor.color.dark_blue: true
+      jcore.chatcolor.color.dark_green: true
+      jcore.chatcolor.color.dark_aqua: true
+      jcore.chatcolor.color.dark_red: true
+      jcore.chatcolor.color.dark_purple: true
+      jcore.chatcolor.color.gold: true
+      jcore.chatcolor.color.gray: true
+      jcore.chatcolor.color.dark_gray: true
+      jcore.chatcolor.color.blue: true
+      jcore.chatcolor.color.green: true
+      jcore.chatcolor.color.aqua: true
+      jcore.chatcolor.color.red: true
+      jcore.chatcolor.color.light_purple: true
+      jcore.chatcolor.color.yellow: true
+      jcore.chatcolor.color.white: true
+  jcore.chatcolor.color.black:
     description: Allows using the color black.
-    default: true
-  jcore.chatcolor.vanilla.dark_blue:
+    default: op
+  jcore.chatcolor.color.dark_blue:
     description: Allows using the color dark_blue.
-    default: true
-  jcore.chatcolor.vanilla.dark_green:
+    default: op
+  jcore.chatcolor.color.dark_green:
     description: Allows using the color dark_green.
-    default: true
-  jcore.chatcolor.vanilla.dark_aqua:
+    default: op
+  jcore.chatcolor.color.dark_aqua:
     description: Allows using the color dark_aqua.
-    default: true
-  jcore.chatcolor.vanilla.dark_red:
+    default: op
+  jcore.chatcolor.color.dark_red:
     description: Allows using the color dark_red.
-    default: true
-  jcore.chatcolor.vanilla.dark_purple:
+    default: op
+  jcore.chatcolor.color.dark_purple:
     description: Allows using the color dark_purple.
-    default: true
-  jcore.chatcolor.vanilla.gold:
+    default: op
+  jcore.chatcolor.color.gold:
     description: Allows using the color gold.
-    default: true
-  jcore.chatcolor.vanilla.gray:
+    default: op
+  jcore.chatcolor.color.gray:
     description: Allows using the color gray.
-    default: true
-  jcore.chatcolor.vanilla.dark_gray:
+    default: op
+  jcore.chatcolor.color.dark_gray:
     description: Allows using the color dark_gray.
-    default: true
-  jcore.chatcolor.vanilla.blue:
+    default: op
+  jcore.chatcolor.color.blue:
     description: Allows using the color blue.
-    default: true
-  jcore.chatcolor.vanilla.green:
+    default: op
+  jcore.chatcolor.color.green:
     description: Allows using the color green.
-    default: true
-  jcore.chatcolor.vanilla.aqua:
+    default: op
+  jcore.chatcolor.color.aqua:
     description: Allows using the color aqua.
-    default: true
-  jcore.chatcolor.vanilla.red:
+    default: op
+  jcore.chatcolor.color.red:
     description: Allows using the color red.
-    default: true
-  jcore.chatcolor.vanilla.light_purple:
+    default: op
+  jcore.chatcolor.color.light_purple:
     description: Allows using the color light_purple.
-    default: true
-  jcore.chatcolor.vanilla.yellow:
+    default: op
+  jcore.chatcolor.color.yellow:
     description: Allows using the color yellow.
-    default: true
-  jcore.chatcolor.vanilla.white:
+    default: op
+  jcore.chatcolor.color.white:
     description: Allows using the color white.
-    default: true
+    default: op

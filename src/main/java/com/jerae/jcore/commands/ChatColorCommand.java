@@ -2,6 +2,7 @@ package com.jerae.jcore.commands;
 
 import com.jerae.jcore.JCore;
 import com.jerae.jcore.guis.ChatColorGUI;
+import com.jerae.jcore.utils.PermissionUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -26,12 +27,9 @@ public class ChatColorCommand implements CommandExecutor {
 
         Player player = (Player) sender;
 
-        if (!player.hasPermission("jcore.chatcolor.gui")) {
-            player.sendMessage(ChatColor.RED + "You don't have permission to use this command.");
-            return true;
+        if (PermissionUtils.hasPermission(player, "chatcolor.gui", "&cYou do not have permission to use this command.")) {
+            ChatColorGUI.open(player, plugin);
         }
-
-        ChatColorGUI.open(player, plugin);
 
         return true;
     }
