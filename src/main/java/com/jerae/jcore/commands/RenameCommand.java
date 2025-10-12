@@ -48,6 +48,16 @@ public class RenameCommand implements CommandExecutor {
 
         String name = String.join(" ", args);
 
+        int maxLength = com.jerae.jcore.JCore.getInstance().getConfig().getInt("rename.max-length", -1);
+        boolean ignoreColorCodes = com.jerae.jcore.JCore.getInstance().getConfig().getBoolean("rename.ignore-color-codes", false);
+
+        String checkedName = ignoreColorCodes ? ChatColorUtils.stripColor(name) : name;
+
+        if (maxLength != -1 && checkedName.length() > maxLength) {
+            player.sendMessage(ChatColorUtils.translate("&cYour item name is too long. The maximum length is " + maxLength + " characters."));
+            return true;
+        }
+
         if (name.matches(".*&[a-f0-9].*") && !PermissionUtils.hasPermission(player, "rename.color", "&cYou do not have permission to use this color.")) {
             return true;
         }

@@ -1,2 +1,6 @@
-# JCore configuration file.
-# Player chat color data will be stored here.
+nick:
+  max-length: -1
+  ignore-color-codes: false
+rename:
+  max-length: -1
+  ignore-color-codes: false

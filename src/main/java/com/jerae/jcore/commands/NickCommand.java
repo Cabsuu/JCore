@@ -36,6 +36,16 @@ public class NickCommand implements CommandExecutor {
 
         String nick = String.join(" ", args);
 
+        int maxLength = com.jerae.jcore.JCore.getInstance().getConfig().getInt("nick.max-length", -1);
+        boolean ignoreColorCodes = com.jerae.jcore.JCore.getInstance().getConfig().getBoolean("nick.ignore-color-codes", false);
+
+        String checkedName = ignoreColorCodes ? ChatColorUtils.stripColor(nick) : nick;
+
+        if (maxLength != -1 && checkedName.length() > maxLength) {
+            player.sendMessage(ChatColorUtils.translate("&cYour nickname is too long. The maximum length is " + maxLength + " characters."));
+            return true;
+        }
+
         if (nick.matches(".*&[a-f0-9].*") && !PermissionUtils.hasPermission(player, "nick.color", "&cYou do not have permission to use this color.")) {
             return true;
         }

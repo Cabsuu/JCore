@@ -9,11 +9,15 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class JCore extends JavaPlugin {
 
+    private static JCore instance;
     private PlayerColorManager playerColorManager;
     private ConversationManager conversationManager;
 
     @Override
     public void onEnable() {
+        instance = this;
+        saveDefaultConfig();
+
         this.playerColorManager = new PlayerColorManager(this);
         this.conversationManager = new ConversationManager();
 
@@ -23,6 +27,10 @@ public class JCore extends JavaPlugin {
         this.getCommand("rename").setExecutor(new com.jerae.jcore.commands.RenameCommand());
         getServer().getPluginManager().registerEvents(new ChatListener(this), this);
         getServer().getPluginManager().registerEvents(new GUIListener(this), this);
+    }
+
+    public static JCore getInstance() {
+        return instance;
     }
 
     @Override

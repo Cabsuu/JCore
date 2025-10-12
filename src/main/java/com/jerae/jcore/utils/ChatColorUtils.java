@@ -85,4 +85,11 @@ public class ChatColorUtils {
 
         return sb.toString();
     }
+
+    public static String stripColor(String input) {
+        if (input == null) {
+            return null;
+        }
+        return ChatColor.stripColor(translate(input));
+    }
 }
