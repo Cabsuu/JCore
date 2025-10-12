@@ -78,7 +78,7 @@ public class ChatColorGUI {
         meta.setLore(lore);
 
         if (!isGradient && selectedColor != null && selectedColor.equals(color.toString())) {
-            meta.addEnchant(Enchantment.DURABILITY, 1, true);
+            meta.addEnchant(Enchantment.UNBREAKING, 1, true);
             meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         }
 
@@ -95,7 +95,7 @@ public class ChatColorGUI {
         meta.setLore(lore);
 
         if (isSelected) {
-            meta.addEnchant(Enchantment.DURABILITY, 1, true);
+            meta.addEnchant(Enchantment.UNBREAKING, 1, true);
             meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         }
 
