@@ -24,7 +24,7 @@ public class NickCommand implements CommandExecutor {
         }
 
         if (args.length == 0) {
-            sender.sendMessage(ChatColorUtils.translate("&cUsage: /nick <nickname|_reset>"));
+            sender.sendMessage(ChatColorUtils.translate("&cUsage: /nick <nickname|-reset>"));
             return true;
         }
 

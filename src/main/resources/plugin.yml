@@ -11,12 +11,18 @@ commands:
     aliases: [cc, color]
   nick:
     description: Change your nickname.
-    usage: /nick <nickname>
+    usage: /nick <nickname|-reset>
     aliases: [nickname]
   rename:
     description: Rename the item in your hand.
     usage: /rename <name>
+  jc:
+    description: JCore main command.
+    usage: /jc <reload>
 permissions:
+  jcore.jc.reload:
+    description: Allows reloading the config file.
+    default: op
   jcore.rename:
     description: Allows using the /rename command.
     default: op

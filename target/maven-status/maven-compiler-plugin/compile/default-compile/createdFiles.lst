@@ -1,3 +1,14 @@
-com\jerae\jcore\commands\RenameCommand.class
-com\jerae\jcore\utils\PermissionUtils.class
-com\jerae\jcore\commands\NickCommand.class
+com/jerae/jcore/utils/GradientUtils.class
+com/jerae/jcore/listeners/GUIListener.class
+com/jerae/jcore/guis/ChatColorGUI$1.class
+com/jerae/jcore/commands/NickCommand.class
+com/jerae/jcore/commands/ChatColorCommand.class
+com/jerae/jcore/listeners/ChatListener.class
+com/jerae/jcore/utils/PermissionUtils.class
+com/jerae/jcore/JCore.class
+com/jerae/jcore/commands/RenameCommand.class
+com/jerae/jcore/guis/ChatColorGUI.class
+com/jerae/jcore/managers/PlayerColorManager.class
+com/jerae/jcore/commands/JcCommand.class
+com/jerae/jcore/managers/ConversationManager.class
+com/jerae/jcore/utils/ChatColorUtils.class
