@@ -1,6 +1,7 @@
 package com.jerae.jcore;
 
 import com.jerae.jcore.commands.ChatColorCommand;
+import com.jerae.jcore.commands.JcCommand;
 import com.jerae.jcore.listeners.ChatListener;
 import com.jerae.jcore.listeners.GUIListener;
 import com.jerae.jcore.managers.ConversationManager;
@@ -25,6 +26,7 @@ public class JCore extends JavaPlugin {
         this.getCommand("chatcolor").setExecutor(new ChatColorCommand(this));
         this.getCommand("nick").setExecutor(new com.jerae.jcore.commands.NickCommand());
         this.getCommand("rename").setExecutor(new com.jerae.jcore.commands.RenameCommand());
+        this.getCommand("jc").setExecutor(new JcCommand(this));
         getServer().getPluginManager().registerEvents(new ChatListener(this), this);
         getServer().getPluginManager().registerEvents(new GUIListener(this), this);
     }
